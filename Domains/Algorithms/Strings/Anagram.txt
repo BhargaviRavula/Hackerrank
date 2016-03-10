@@ -1,0 +1,47 @@
+/*
+https://www.hackerrank.com/challenges/anagram
+*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        
+        
+        for(int i=0; i < t; i++){
+         String s =  sc.next();
+         int sl = s.length(); 
+         int arr[] = new int[26];
+            for(int l=0; l< 26; l++){
+                arr[l] =0;
+            }
+         
+         if(sl%2 == 1){
+             System.out.println("-1");
+         }else{
+            for(int j=0; j<sl/2; j++){
+                arr[s.charAt(j) - 'a']++;
+                }  
+             
+             for(int k= sl/2; k < sl; k++){
+                 arr[s.charAt(k) - 'a']--;
+             }
+             int count = 0;
+             for(int m=0; m < 26; m++){
+                 count += Math.abs(arr[m]);
+             }
+             
+             System.out.println(count/2);
+            } 
+             
+         }       
+        }  
+}

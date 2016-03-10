@@ -1,0 +1,35 @@
+/*
+
+https://www.hackerrank.com/challenges/pangrams
+
+*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+
+        Scanner sc = new Scanner(System.in);
+        String s= sc.nextLine().toLowerCase();
+        
+        HashSet<Integer> h = new HashSet<Integer>();
+        
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i)!=' '){
+                int put = (int)s.charAt(i);
+                h.add(put);
+            }
+        }
+        
+        if(h.size()==26)
+            System.out.println("pangram");
+        else
+            System.out.println("not pangram");
+}
+}

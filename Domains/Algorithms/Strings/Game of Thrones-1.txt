@@ -1,0 +1,48 @@
+/*
+https://www.hackerrank.com/challenges/game-of-thrones
+*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner myScan = new Scanner(System.in);
+        String inputString = myScan.next();
+       
+        int flag= 0;
+        // Assign ans a value of YES or NO, depending on whether or not inputString satisfies the required condition
+        int letter[] = new int[26];
+        for(int p=0; p < letter.length; p++){
+            letter[p] = 0;
+        }
+        
+        int j = inputString.length();
+
+        for (int i = 0; i < j; i++) {
+        letter[inputString.charAt(i) - 'a']++;
+        }
+
+        int count = 0;
+        for (int i = 0; i < 26; i++) {
+            if (letter[i] % 2 == 1) {
+                count++;
+            }
+         }
+
+    if (count > 1) {
+        flag = 1;
+    }
+
+    if (flag==0)
+        System.out.println("YES");
+    else
+        System.out.println("NO");
+
+        myScan.close();
+    }
+}

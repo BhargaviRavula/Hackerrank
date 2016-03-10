@@ -1,0 +1,39 @@
+/*
+https://www.hackerrank.com/challenges/make-it-anagram
+*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String f = sc.nextLine();
+        String s = sc.nextLine();
+        
+        int fl = f.length();
+        int sl = s.length();
+        
+        int farr[] = new int[26];
+        int sarr[] = new int[26];
+        
+        for(int i=0; i<fl; i++){
+          farr[f.charAt(i) - 'a']++;  
+        }
+        
+        for(int i=0; i<sl; i++){
+          sarr[s.charAt(i) - 'a']++;  
+        }
+        int sum=0;
+        for(int i =0; i < 26; i++){
+            sum+=Math.abs(farr[i] - sarr[i]);
+        }
+        
+        System.out.println(sum);
+    }
+}
