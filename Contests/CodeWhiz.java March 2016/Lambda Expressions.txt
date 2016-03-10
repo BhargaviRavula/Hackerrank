@@ -1,0 +1,26 @@
+/*
+https://www.hackerrank.com/contests/codewhiz-java-march-2016/challenges/java-lambda-expressions
+*/
+
+ // Write your code here
+   performOperation checkEvenOdd(){
+        return (a)->{
+            return a%2==0?0:1;
+        };
+        }
+
+    performOperation checkPrime(){
+        return (a)->{
+            for(int i =2; i < a; i++){
+                a = a%i; 
+            }
+            return a == 0? 1:0;
+        };
+    }
+
+    performOperation checkPalindrome(){
+        return (a)->{
+           return ((a+"").contentEquals(new StringBuilder(a+"").reverse().toString())==true)?0:1;
+        };
+}
+}
